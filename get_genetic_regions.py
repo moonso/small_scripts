@@ -20,8 +20,8 @@ import click
 import click
 # import prettyplotlib as ppl
 # import matplotlib.pyplot as plt
-import numpy as np
-import pandas as pd
+# import numpy as np
+# import pandas as pd
 from codecs import open
 
 from vcf_parser import parser as vcf_parser
@@ -126,8 +126,8 @@ def get_genetic_region(variant_file, outfile, gene, rare):
                 
     if len(current_features) > 0:
         regions[region_count] = (variants_in_region, position, current_features, new_features)
-    pp(regions)
-    print('All genes: %s' % str(all_genes))
+    # pp(regions)
+    print('Number of regions: %s' % str(region_count))
     print('Time for analysis: %s' % str(datetime.now() - start_time))
             
 
