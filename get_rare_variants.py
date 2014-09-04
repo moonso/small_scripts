@@ -51,8 +51,8 @@ def get_rare(variant_file, rare, keyword):
         print(line)
     for variant in variant_parser:
         interesting = True
-        maf = float(variant['info_dict'].get(keyword,'0'))
-        if maf < rare:
+        maf = [float(allele) for allele in variant['info_dict'].get(keyword,'0').split(',')]
+        if min(maf) < rare:
             print('\t'.join([variant[entry] for entry in variant_parser.metadata.header]))
     
 if __name__ == '__main__':
